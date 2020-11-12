@@ -1,5 +1,8 @@
 # Docker Dictionary
 
+## Author
+Kochetygov Andrew
+
 ## Features
 Four hosts are available after run:
 1. http://localhost - **frontend**-application (built with NuxtJS)
