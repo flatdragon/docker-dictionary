@@ -7,7 +7,9 @@ Four hosts are available after run:
 3. http://localhost:9090 - **dictionary**-application
 4. http://localhost:8080 - **phpmyadmin**-application for MySQL database manual reviews
 
-MySQL database is persistent since data located in volume.
+**MySQL database is persistent** since data located in volume.
+
+**Environment variables** can be controlled via .env file.
 
 ## Development Mode
 Backend and frontend-application will have auto-updates since source code is pass through volume to the container.

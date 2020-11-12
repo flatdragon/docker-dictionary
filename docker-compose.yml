@@ -4,7 +4,6 @@ services:
     image: brendanburns/dictionary-server
     restart: unless-stopped
     ports:
-#      - 9090:8080
       - ${DICTIONARY_PORT}:8080
   mysql:
     image: mysql
@@ -14,13 +13,7 @@ services:
       - ./data:/var/lib/mysql
     env_file:
       - .env
-#    environment:
-#      MYSQL_USER: librarian
-#      MYSQL_PASSWORD: secret
-#      MYSQL_DATABASE: dictionary
-#      MYSQL_ROOT_PASSWORD: secret
     ports:
-#      - 3306:3306
       - ${MYSQL_PORT}:3306
     depends_on:
       - dictionary
@@ -28,13 +21,7 @@ services:
     image: phpmyadmin
     env_file:
       - .env
-#    environment:
-#      PMA_HOST: mysql
-#      PMA_PORT: 3306
-#      PMA_USER: librarian
-#      PMA_PASSWORD: secret
     ports:
-#      - 8080:80
       - ${PHPMYADMIN_PORT}:80
     depends_on:
       - mysql
@@ -43,12 +30,8 @@ services:
       context: ./backend
     env_file:
       - .env
-#    environment:
-#      NODE_ENV: ${NODE_ENV}
-#      NPM_CONFIG_LOGLEVEL: ${NPM_CONFIG_LOGLEVEL}
     restart: unless-stopped
     ports:
-#      - 3000:3000
       - ${BACKEND_PORT}:3000
     volumes:
       - ./backend:/app
@@ -60,12 +43,8 @@ services:
       context: ./frontend
     env_file:
       - .env
-#    environment:
-#      NODE_ENV: ${NODE_ENV}
-#      NPM_CONFIG_LOGLEVEL: ${NPM_CONFIG_LOGLEVEL}
     restart: unless-stopped
     ports:
-#      - 80:3000
       - ${FRONTEND_PORT}:3000
     volumes:
       - ./frontend:/app
