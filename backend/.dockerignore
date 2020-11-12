@@ -1,0 +1,10 @@
+.git
+.gitignore
+.nuxt
+.idea
+.editorconfig
+.env.example
+node_modules
+jsconfig.json
+README.md
+Dockerfile
